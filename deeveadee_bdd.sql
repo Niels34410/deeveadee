@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client :  localhost
--- Généré le :  Jeu 08 Juin 2017 à 16:39
+-- Généré le :  Lun 12 Juin 2017 à 16:29
 -- Version du serveur :  5.7.18-0ubuntu0.16.04.1
 -- Version de PHP :  7.0.15-0ubuntu0.16.04.4
 
@@ -62,6 +62,7 @@ CREATE TABLE `casting` (
 
 CREATE TABLE `client` (
   `id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
   `nom` varchar(255) NOT NULL,
   `prenom` varchar(255) NOT NULL,
   `adresse` varchar(255) NOT NULL,
@@ -82,6 +83,7 @@ CREATE TABLE `client` (
 CREATE TABLE `dvd` (
   `numD` int(11) NOT NULL,
   `titreD` varchar(255) NOT NULL,
+  `slug` varchar(255) NOT NULL,
   `auteurD` varchar(255) NOT NULL,
   `anneeD` year(4) NOT NULL,
   `categorieD` varchar(255) NOT NULL,
@@ -95,9 +97,9 @@ CREATE TABLE `dvd` (
 -- Contenu de la table `dvd`
 --
 
-INSERT INTO `dvd` (`numD`, `titreD`, `auteurD`, `anneeD`, `categorieD`, `dateachatD`, `nombreD`, `societeD`, `acteur`) VALUES
-(1, 'titre1', 'auteur1', 2017, '', '2017-05-23', '', '1', '1'),
-(2, 'titre2', 'auteur2', 2016, '', '2017-06-06', '', '3', '1');
+INSERT INTO `dvd` (`numD`, `titreD`, `slug`, `auteurD`, `anneeD`, `categorieD`, `dateachatD`, `nombreD`, `societeD`, `acteur`) VALUES
+(1, 'titre1', '', 'auteur1', 2017, '', '2017-05-23', '', '1', '1'),
+(2, 'titre2', '', 'auteur2', 2016, '', '2017-06-06', '', '3', '1');
 
 -- --------------------------------------------------------
 
